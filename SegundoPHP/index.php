@@ -44,12 +44,53 @@
         //si se quiere mostrar el nombre con llaves
         echo "Diez kilos de {{$fruta}s} si serian caras <br>";//para que salgan las llaves
         echo $fruta[3]."<br>";
-        $abe="ABCDEFGHIJKLMNÑOPQRSTUVWYZ";
+        $abe="ABCDEFGHIJKLMNOPQRSTUVWYZ";
         echo $abe[13]."<br>";//ojo...las Ñ
         #podemos sumar una cadena con un int
         $numero="2";
-        echo "<br>El resultado es ".(2+$numero);
+        echo "<br>El resultado es ".(2+$numero)."<br>";
 
+        //resultados en boleano segun valor
+        if ($usuario==123456){
+            echo "El nombre es Lucia, Es verdadero"."<br>";
+        }else{
+            echo "El nombre no es Lucia, es falso"."<br>";
+        }
+        $numero=-0.02;
+        if ($numero){
+            echo $numero. '=> true <br>';//la condicion es verdadera
+        }else{
+            echo $numero. '=> flase <br>';
+        }
+
+        //Tipos de Varianles ----- declaración o conversion de datos
+        echo (float) (0.2545+5875)*10;
+        $otroValor=(int)5;
+        echo '<br>'.$otroValor;
+
+        #Matriz
+        $matrizDeNumeros[]=array();
+       for ($i=0;$i<10;$i++){
+           $matrizDeNumeros[$i]=$i+10;
+       }
+       print_r($matrizDeNumeros);
+       echo "<br>";
+        $matrizEjemplo[]=array();
+        for ($i=0;$i<30;$i++){
+            if ($i<15){
+                $matrizEjemplo[$i]="a";
+            }else{
+                $matrizEjemplo[$i]="b";
+            }
+        }
+        print_r($matrizEjemplo);
+        echo "<br>";
+
+        $matrizAbe[]=array();
+        for ($i=0;$i<23;$i++){
+            $matrizAbe[$i]=$abe[$i];
+        }
+        print_r($matrizAbe);
     ?>
 </body>
 </html>
