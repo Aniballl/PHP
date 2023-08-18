@@ -91,6 +91,18 @@
             $matrizAbe[$i]=$abe[$i];
         }
         print_r($matrizAbe);
+        echo "<br>";
+
+        /*Ejercicio: Crea las tablas de multiplicar desde el 1 al 10*/
+	    echo "<br>";
+        $multiplicar[]=array();
+        $num=[1,2,3,4,5,6,7,8,9,10];
+        for ($i=0;$i<11;$i++){
+            for ($x=0;$x<11;$x++){
+               echo "$i*$x= ".$i*$x."<br>";
+            }
+        }
+
     ?>
 </body>
 </html>
