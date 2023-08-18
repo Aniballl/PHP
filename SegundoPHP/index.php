@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Segundo PHP</title>
     <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <?php
@@ -91,6 +92,33 @@
             $matrizAbe[$i]=$abe[$i];
         }
         print_r($matrizAbe);
+        echo "<br>";
+
+        /*Ejercicio: Crea las tablas de multiplicar desde el 1 al 10*/
+	    echo "<br>";
+        $multiplicar[]=array();
+        $num=[1,2,3,4,5,6,7,8,9,10];
+        for ($i=0;$i<11;$i++){
+            for ($x=0;$x<11;$x++){
+               echo "$i*$x= ".$i*$x."<br>";
+            }
+            echo "<br>";
+        }
+        #Día 23 de Agosto
+        $i=0;
+        $x=0;
+        echo "<h1>Tablade de multiplicar con While</h1>";
+        while($i<=10){
+            while($x<=10){
+                echo "$i * $x=".($i*$x)."<br>";
+                $x++;
+            }
+            // Cuando llega aqui el programa, es porque el bucle anterior se ha completado y hay que inicializar el
+            // valor de $x=1;
+            $x=0;
+            echo "<br>";
+            $i++;
+        }
     ?>
 </body>
 </html>
