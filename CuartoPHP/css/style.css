@@ -1,0 +1,15 @@
+table, th, td{
+    border: 2px solid gray;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    width: auto;
+}
+h1{
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    font-family: Candara;
+}

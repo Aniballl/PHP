@@ -102,7 +102,85 @@
     $valorDecimal=89.13;
     echo "el valor de \$valorDecimal = ".round($valorDecimal);
 
+    //Ambito de las variables
+    //Ambito local se refiere que su utilidad y valor esta dentro de una función
+    echo "<br>";
+    function variableLocal(){
+        $miVariable=5;//variable de ambito local
+        echo "mi variable \$miVariable tiene valor de $miVariable";
+    }
+    variableLocal();
+	echo "<br>";
+    $miVariableG=15;
+    function variableGlobal(){
+        global $miVariableG,$valorDecimal;
+        $miVariableG+=$valorDecimal;
+        echo "Ahora \$miVariableG vale $miVariableG";
+    }
+    variableGlobal();
+    echo "<br> Ahora \miVariableG fuera de la funcion tiene un valor de $miVariableG";
+	echo "<br>";
+    variableGlobal();
+	echo "<br> Ahora \miVariableG fuera de la funcion tiene un valor de $miVariableG";
+	echo "<br>";
+    variableGlobal();
+    $miVariableG+=1;//pudo manejarla fuera de la funcion
 
+    //variables static su valor se ve afectado cada vez que se invoca la función, es convertir una variable local en
+    // usable su valor cuando se invoque nuevamente la función
+    function variableStatic(){
+        static $edad=18;
+        echo "<br>La edad es $edad";
+        $edad++;
+    }
+    variableStatic();
+    variableStatic();
+    variableStatic();
+    unset($edad);//despues q no le necesito puedo eliminarla->NO, porque es esttica
+    variableStatic();
+    echo "<p> ^ Esta no deveria de salir, pero sale por q la variable es estatica y no hace caso al unset.</p>";
+
+    //Ejercicio: Declara tres funciones como las anteriores, donde exista
+    //1) una que sus variables locales sean $X y$y,realiza una suma entre ellas
+    //2)declara una variable llamada $yy y declara dentro de la funcioncomo global, incrementala en 2, muestra su
+    // valor fuera de la función
+    // 3)crea una funcion llamada puntuacion y dentro declara una variable static llamada $puntos, incrementala cada
+    // vez que se invoque y muestra su valor.
+    echo "<h1>Ejercicios sobre varibales</h1>";
+
+	echo "<h3>1) Varibale Local</h3>";
+    #1)
+    function local(){
+        $x=5;
+        $y=10;
+        echo "La suma es = ".$x+$y;
+    }
+    local();
+
+	echo "<h3>2) Varibale Global</h3>";
+    #2)
+    $yy=2;
+    function gglobal(){
+        global $yy;
+        echo "El valor de la variable global es ".$yy;
+        $yy +=2;
+    }
+    gglobal();
+	echo "<br>";
+    gglobal();
+	echo "<br>";
+    gglobal();
+
+	echo "<h3>3) Varibale Estatica</h3>";
+    #3)
+    function puntuacion(){
+        static $puntos=1;
+        echo "Tienes $puntos punto/s en tu cuenta.<br>";
+        $puntos++;
+    }
+    puntuacion();
+    puntuacion();
+    puntuacion();
 ?>
 </body>
 </html>
